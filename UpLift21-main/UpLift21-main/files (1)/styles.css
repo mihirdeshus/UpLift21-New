@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap');
+
+/* ── Base reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"],
+section.main {
+    background: #080C12 !important;
+    color: #C8D6E5 !important;
+}
+
+[data-testid="stSidebar"] {
+    background: #0A0F18 !important;
+    border-right: 1px solid #141E2E !important;
+}
+
+/* ── Hide Streamlit chrome ── */
+#MainMenu, footer, header,
+[data-testid="stToolbar"],
+[data-testid="stDecoration"],
+[data-testid="stStatusWidget"] {
+    display: none !important;
+}
+
+/* ── Global typography ── */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif !important;
+    color: #E6EDF3 !important;
+    letter-spacing: -0.02em !important;
+}
+p, li, div, span {
+    font-family: 'DM Sans', sans-serif !important;
+}
+code, pre {
+    font-family: 'DM Mono', monospace !important;
+}
+
+/* ── Sidebar radio nav ── */
+[data-testid="stSidebar"] .stRadio label {
+    font-family: 'DM Mono', monospace !important;
+    font-size: 0.76rem !important;
+    letter-spacing: 0.09em !important;
+    color: #2A4A6A !important;
+    text-transform: uppercase !important;
+    padding: 7px 0 !important;
+    transition: color 0.2s !important;
+}
+[data-testid="stSidebar"] .stRadio label:hover {
+    color: #00C6A7 !important;
+}
+
+/* ── Inputs ── */
+[data-baseweb="input"] input,
+input[type="number"],
+input[type="text"] {
+    background: #0D1218 !important;
+    border: 1px solid #1A2332 !important;
+    color: #C8D6E5 !important;
+    border-radius: 6px !important;
+    font-family: 'DM Mono', monospace !important;
+    font-size: 0.87rem !important;
+    transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+[data-baseweb="input"]:focus-within {
+    border-color: #00C6A7 !important;
+    box-shadow: 0 0 0 2px rgba(0,198,167,0.10) !important;
+}
+
+/* ── Select / dropdown ── */
+[data-baseweb="select"] > div {
+    background: #0D1218 !important;
+    border: 1px solid #1A2332 !important;
+    border-radius: 6px !important;
+    color: #C8D6E5 !important;
+    font-family: 'DM Mono', monospace !important;
+    font-size: 0.87rem !important;
+}
+[data-baseweb="popover"] {
+    background: #0D1218 !important;
+    border: 1px solid #1A2332 !important;
+}
+
+/* ── Input labels ── */
+[data-testid="stNumberInput"] label,
+[data-testid="stSelectbox"] label,
+[data-testid="stTextInput"] label {
+    font-family: 'DM Mono', monospace !important;
+    font-size: 0.71rem !important;
+    letter-spacing: 0.07em !important;
+    color: #3A5A7A !important;
+    text-transform: uppercase !important;
+}
+
+/* ── Primary button ── */
+.stButton > button {
+    background: #00C6A7 !important;
+    color: #080C12 !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-family: 'DM Mono', monospace !important;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.09em !important;
+    text-transform: uppercase !important;
+    padding: 11px 26px !important;
+    transition: opacity 0.18s, transform 0.14s !important;
+    cursor: pointer !important;
+}
+.stButton > button:hover {
+    opacity: 0.86 !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ── Download button ── */
+.stDownloadButton > button {
+    background: transparent !important;
+    color: #00C6A7 !important;
+    border: 1px solid rgba(0,198,167,0.4) !important;
+    border-radius: 6px !important;
+    font-family: 'DM Mono', monospace !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.09em !important;
+    text-transform: uppercase !important;
+    padding: 9px 20px !important;
+    transition: background 0.18s !important;
+}
+.stDownloadButton > button:hover {
+    background: rgba(0,198,167,0.07) !important;
+}
+
+/* ── Dataframe ── */
+[data-testid="stDataFrame"] {
+    border: 1px solid #1A2332 !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+/* ── Plotly ── */
+[data-testid="stPlotlyChart"] {
+    background: transparent !important;
+}
+
+/* ── Alert boxes ── */
+[data-testid="stAlert"] {
+    background: #0D1218 !important;
+    border: 1px solid #1A2332 !important;
+    border-radius: 8px !important;
+}
+
+/* ── Custom component classes ── */
+
+.brand-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: #E6EDF3;
+}
+.brand-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    color: #1A3A5A;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #141E2E;
+    margin-bottom: 18px;
+}
+.sidebar-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.67rem;
+    letter-spacing: 0.06em;
+    line-height: 2.0;
+    color: #1A3A5A;
+}
+.sidebar-meta span {
+    color: #2A5A7A;
+}
+
+.page-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.67rem;
+    letter-spacing: 0.15em;
+    color: #1A3A5A;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.page-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #E6EDF3;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    margin-bottom: 6px;
+}
+.page-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.87rem;
+    color: #3A5A7A;
+    line-height: 1.65;
+    margin-bottom: 30px;
+    max-width: 680px;
+}
+.page-header {
+    border-bottom: 1px solid #141E2E;
+    padding-bottom: 22px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #0D1218;
+    border: 1px solid #1A2332;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin-bottom: 14px;
+    transition: border-color 0.22s;
+}
+.card:hover { border-color: #243548; }
+.card-accent { border-left: 3px solid #00C6A7 !important; }
+.card-warn   { border-left: 3px solid #F5A623 !important; }
+.card-danger { border-left: 3px solid #FF4D6A !important; }
+
+.section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.67rem;
+    letter-spacing: 0.14em;
+    color: #1A3A5A;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #C8D6E5;
+    margin-bottom: 4px;
+}
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 18px 0;
+}
+.metric-tile {
+    background: #0D1218;
+    border: 1px solid #1A2332;
+    border-radius: 8px;
+    padding: 16px 18px;
+    text-align: center;
+}
+.metric-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #00C6A7;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+.metric-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    color: #2A4A6A;
+    text-transform: uppercase;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+.badge-low      { background: rgba(0,198,167,0.09);   color: #00C6A7; border: 1px solid rgba(0,198,167,0.28); }
+.badge-moderate { background: rgba(245,166,35,0.09);  color: #F5A623; border: 1px solid rgba(245,166,35,0.28); }
+.badge-high     { background: rgba(255,77,106,0.09);  color: #FF4D6A; border: 1px solid rgba(255,77,106,0.28); }
+
+.prob-big {
+    font-family: 'Syne', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+.prob-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1A3A5A;
+    margin-top: 4px;
+}
+
+.prob-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid #0F1820;
+}
+.prob-row-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.76rem;
+    color: #3A5A7A;
+    width: 90px;
+    flex-shrink: 0;
+}
+.prob-bar-wrap {
+    flex: 1;
+    background: #111920;
+    border-radius: 3px;
+    height: 5px;
+    overflow: hidden;
+}
+.prob-bar { height: 100%; border-radius: 3px; }
+.prob-pct {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.74rem;
+    width: 42px;
+    text-align: right;
+}
+
+.rec-box {
+    background: #0D1218;
+    border: 1px solid #1A2332;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-top: 16px;
+}
+.rec-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.67rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1A3A5A;
+    margin-bottom: 9px;
+}
+.rec-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    color: #8AAAC8;
+    line-height: 1.68;
+}
+
+.paper-card {
+    background: #0D1218;
+    border: 1px solid #1A2332;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: #243548; }
+.paper-authors {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: #1A4A6A;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+}
+.paper-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.87rem;
+    font-weight: 500;
+    color: #C8D6E5;
+    margin-bottom: 3px;
+    line-height: 1.4;
+}
+.paper-journal {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: #1A4A6A;
+    margin-bottom: 7px;
+}
+.paper-finding {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: #3A6A8A;
+    line-height: 1.55;
+}
+
+.feat-row {
+    display: flex;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid #0F1820;
+    gap: 12px;
+}
+.feat-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.76rem;
+    color: #4A7A9A;
+    width: 120px;
+    flex-shrink: 0;
+}
+.feat-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: #2A4A6A;
+    line-height: 1.5;
+}
+
+.cost-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border: 1px solid #1A2332;
+    border-radius: 6px;
+    margin-bottom: 7px;
+}
+.cost-label { font-family: 'DM Sans', sans-serif;  font-size: 0.83rem; color: #4A6A8A; }
+.cost-tests { font-family: 'DM Mono', monospace;   font-size: 0.76rem; color: #2A4A6A; }
+.cost-value { font-family: 'DM Mono', monospace;   font-size: 0.83rem; }
+
+.sep { border: none; border-top: 1px solid #141E2E; margin: 24px 0; }
+
+.footer-bar {
+    border-top: 1px solid #141E2E;
+    margin-top: 40px;
+    padding-top: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.67rem;
+    letter-spacing: 0.1em;
+    color: #142030;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* ── Sidebar collapse toggle button ── */
+[data-testid="stSidebarCollapseButton"] {
+    color: #2A4A6A !important;
+    background: transparent !important;
+    border: 1px solid #1A2332 !important;
+    border-radius: 6px !important;
+    transition: border-color 0.2s, color 0.2s !important;
+}
+[data-testid="stSidebarCollapseButton"]:hover {
+    border-color: #00C6A7 !important;
+    color: #00C6A7 !important;
+    background: rgba(0,198,167,0.06) !important;
+}
+[data-testid="stSidebarCollapseButton"] svg {
+    fill: currentColor !important;
+}
+
+/* Main area expand button (when sidebar is collapsed) */
+[data-testid="stSidebarOpenButton"] button,
+[data-testid="collapsedControl"] button {
+    background: #0D1218 !important;
+    border: 1px solid #1A2332 !important;
+    border-radius: 6px !important;
+    color: #2A4A6A !important;
+    transition: border-color 0.2s, color 0.2s !important;
+}
+[data-testid="stSidebarOpenButton"] button:hover,
+[data-testid="collapsedControl"] button:hover {
+    border-color: #00C6A7 !important;
+    color: #00C6A7 !important;
+    background: rgba(0,198,167,0.06) !important;
+}
+
+.empty-state {
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    background: #0D1218;
+    border: 1px solid #1A2332;
+    border-radius: 10px;
+    padding: 32px;
+}
+.empty-dot {
+    width: 44px; height: 44px;
+    border: 2px solid #1A2332;
+    border-radius: 50%;
+    margin-bottom: 6px;
+}
+.empty-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1A2A3A;
+}
+.empty-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.81rem;
+    color: #111E2C;
+    max-width: 240px;
+    line-height: 1.6;
+}
